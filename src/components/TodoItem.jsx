@@ -1,26 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-function TodoItem({ todoName, todoDate }) {
+function TodoItem({ todoName, todoDate, handleOnClickEdit, handleOnClickDelete }) {
   return (
-    <div className="d-flex align-items-center mb-2">
-     <table className="table table-bordered mb-2">
+    <table className="table table-bordered mt-2">
       <tbody>
         <tr>
-          <td className="align-middle">
+          <td className="align-middle text-center"> 
             <h6 className="mb-0">{todoName}</h6>
           </td>
-          <td className="align-middle">
+          <td className="align-middle text-center"> 
             <h6 className="mb-0">{todoDate}</h6>
           </td>
-          <td className="align-middle">
-            <button type="button" className="btn btn-sm btn-primary me-2">Edit</button>
-            <button type="button" className="btn btn-sm btn-danger">Delete</button>
+          <td className="align-middle text-center"> 
+            <button type="button" className="btn btn-sm btn-primary me-2" onClick={handleOnClickEdit}>Edit</button>
+            <button type="button" className="btn btn-sm btn-danger" onClick={handleOnClickDelete}>Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
-    </div>
-  )
+  );
 }
 
 export default TodoItem;
